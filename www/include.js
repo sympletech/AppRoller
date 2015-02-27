@@ -39,6 +39,7 @@
 	//********************************************************
 	var styles = [
 		'css/reset.css',
+		'css/centurion-grid_v2.min.css',
 		'css/app.css'
 	];
 

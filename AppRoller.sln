@@ -56,6 +56,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "grunt", "http://localhost:6
 		SlnRelativePath = "grunt\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebOpsApi.MyApp", "api\Applications\WebOpsApi.MyApp\WebOpsApi.MyApp.csproj", "{4DF7C0AF-36E0-4609-A33D-DCD3E13EBDA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{DF0317D8-7A0A-4875-8723-0FE985502060}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,12 @@ Global
 		{734B68EA-0E3C-4C43-90A2-1818564BB21C}.QA|Any CPU.Build.0 = Debug|Any CPU
 		{734B68EA-0E3C-4C43-90A2-1818564BB21C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{734B68EA-0E3C-4C43-90A2-1818564BB21C}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{4DF7C0AF-36E0-4609-A33D-DCD3E13EBDA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF7C0AF-36E0-4609-A33D-DCD3E13EBDA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF7C0AF-36E0-4609-A33D-DCD3E13EBDA2}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF7C0AF-36E0-4609-A33D-DCD3E13EBDA2}.QA|Any CPU.Build.0 = Release|Any CPU
+		{4DF7C0AF-36E0-4609-A33D-DCD3E13EBDA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF7C0AF-36E0-4609-A33D-DCD3E13EBDA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,5 +104,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{42BBD588-57E8-47B9-8CE5-C825A61B245B} = {9F47ED1F-A93F-4704-A2DE-FE2005CD44D4}
 		{934CF0B2-72A1-44D2-99A5-A51FA1C58744} = {9F47ED1F-A93F-4704-A2DE-FE2005CD44D4}
+		{4DF7C0AF-36E0-4609-A33D-DCD3E13EBDA2} = {DF0317D8-7A0A-4875-8723-0FE985502060}
+		{DF0317D8-7A0A-4875-8723-0FE985502060} = {9F47ED1F-A93F-4704-A2DE-FE2005CD44D4}
 	EndGlobalSection
 EndGlobal

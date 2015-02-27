@@ -61,7 +61,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations">
       <Private>True</Private>
@@ -119,6 +119,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Applications\WebOpsApi.MyApp\WebOpsApi.MyApp.csproj">
+      <Project>{4df7c0af-36e0-4609-a33d-dcd3e13ebda2}</Project>
+      <Name>WebOpsApi.MyApp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebOpsApi.Shared\WebOpsApi.Shared.csproj">
       <Project>{934CF0B2-72A1-44D2-99A5-A51FA1C58744}</Project>
       <Name>WebOpsApi.Shared</Name>

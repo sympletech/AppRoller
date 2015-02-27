@@ -1,0 +1,87 @@
+//**************************************************
+//      Vendor Prefix Mixins
+//**************************************************
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin box-shadow($definition) {
+	-webkit-box-shadow: $definition;
+	-moz-box-shadow: $definition;
+	-ms-box-shadow: $definition;
+	-o-box-shadow: $definition;
+	box-shadow: $definition;
+}
+
+@mixin background-size($size){
+	-ms-background-size: $size;
+	-moz-background-size: $size;
+	-o-background-size: $size;
+	-webkit-background-size: $size; 
+	background-size: $size;
+} 
+
+@mixin opacity($weight){
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$weight*100})";
+	filter: alpha(opacity=#{$weight*100});
+	-moz-opacity: $weight;
+	-khtml-opacity:$weight;
+	opacity: $weight;
+}
+
+ @mixin absolute-fill{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;	
+ } 
+
+ @mixin transition($transitionDef){
+	-webkit-transition: $transitionDef;
+	-moz-transition: $transitionDef;
+	-ms-transition: $transitionDef;
+	-o-transition: $transitionDef;
+	transition: $transitionDef;
+ }
+
+  @mixin transform($transformDef){
+	-ms-transform: $transformDef;
+	-o-transform: $transformDef;
+	-webkit-transform: $transformDef;
+	-moz-transform: $transformDef;
+	transform: $transformDef;
+ }
+
+ @mixin no-userselect{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;    
+ }
+
+ @mixin boxingSize($boxDef){
+	-moz-box-sizing: $boxDef;
+	-webkit-box-sizing: $boxDef;
+	box-sizing: $boxDef;
+ }
+
+@mixin vertical-gradient($start: #000, $stop: #FFF) { background: ($start + $stop) / 2;
+	background: -webkit-gradient(linear, left top, left bottom, from($start), to($stop));
+	background: -moz-linear-gradient(center top, $start 0%, $stop 100%);
+	background: -moz-gradient(center top, $start 0%, $stop 100%);
+	background: -ms-linear-gradient(center top, $start 0%, $stop 100%);
+}
+
+@mixin setBgAndHover($baseColor) {
+		background: $baseColor;
+		@include transition(all 0.15s ease-out);
+	&:hover {
+		background: darken($baseColor, 7%);
+	}
+}

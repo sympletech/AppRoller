@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>App Roller 1.0</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<script src="include.js"></script>
+</head>
+<body>
+
+	<div ng-include src="'partials/header.html'"></div>
+
+	<!--Main Content-->
+	<div class="ng-cloak" ng-view ng-cloak></div>
+
+	<div ng-include src="'partials/footer.html'"></div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+/packages
+/www/js/app-min.js
+/www/js/app-min.js.map
+/www/js/app.js
+/www/css/app.css
+/*.suo
+/api/WebOpsApi/obj
+/api/WebOpsApi/bin
+/api/WebOpsApi.Shared/obj
+/api/WebOpsApi.Shared/bin
+/grunt/.sass-cache
+/grunt/node_modules

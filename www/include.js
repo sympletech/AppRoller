@@ -38,9 +38,7 @@
 	//	Style Sheets
 	//********************************************************
 	var styles = [
-		'css/reset.css',
-		'css/centurion-grid_v2.min.css',
-		'//fast.fonts.com/cssapi/23855eec-5fdf-4594-9898-0113a04bfef0.css',
+		'css/Semantic-UI-1.10.3/semantic.min.css',
 		'css/app.css'
 	];
 
@@ -54,6 +52,7 @@
 		'js/lib/angular-ie7-support.min.js',
 		'js/lib/lodash.2.4.1.min.js',
 		'js/lib/jquery.cookie.js',
+		'css/Semantic-UI-1.10.3/semantic.min.js',
 		_global.env == 'prd' ? 'js/app-min.js' : 'js/app.js'
 	];
 

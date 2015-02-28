@@ -40,6 +40,7 @@
 	var styles = [
 		'css/reset.css',
 		'css/centurion-grid_v2.min.css',
+		'//fast.fonts.com/cssapi/23855eec-5fdf-4594-9898-0113a04bfef0.css',
 		'css/app.css'
 	];
 

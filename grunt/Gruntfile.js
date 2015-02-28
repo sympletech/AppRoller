@@ -5,17 +5,11 @@ module.exports = function (grunt) {
 		//--	Core
 		'app.js',
 		'routes.js',
-
-		//--	Helpers
 		'helpers/browser-detector.js',
-
-		//--	Directives
 		'directives/modal.js',
-
-		//--	Factories
 		'factories/xssAjax-service.js',
-
-		//--	Controllers
+		'factories/authorization-service.js',
+		'controllers/header-controller.js',
 		'controllers/home-controller.js'
 	];
 

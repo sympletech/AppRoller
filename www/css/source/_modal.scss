@@ -67,12 +67,6 @@
 		display: inline-block;
 		font-weight: 300;
 		color: #fff;
-		&:after{
-			content: "\6b";
-			font-family: 'icomoon';
-			vertical-align: -1px;
-			font-size: 1em;
-		}
 	}
 	img {
 		max-width: 100%;

@@ -1,11 +1,30 @@
-﻿<header>
-	<div class="container">
-		<div class="grid-75">
-			<img src="/img/logo.png" alt="" />
+﻿<div ng-controller="HeaderController">
+	<header>
+		<div class="container">
+			<div class="grid-75">
+				<img src="/img/logo.png" alt="" />
+			</div>
+			<div class="grid-25">
+				
+				<button ng-hide="userLoggedIn" ng-click="showLoginModal()">Login</button>
+				<div ng-show="userLoggedIn">
+					{{currentUser.username}}
+					<button ng-click="logOut()">Log Out</button>
+				</div>
+			</div>
 		</div>
-		<div class="grid-25">
-			Current User :
-		</div>		
-	</div>
+	</header>
 
-</header>
+
+	<div ng-modal show="loginModalVisible" title="Please Login">
+		<div>
+			<label>Username</label>
+			<input ng-model="username" type="text" />
+		</div>
+		<div>
+			<label>Password</label>
+			<input ng-model="password" type="password" />
+		</div>
+		<button ng-click="attemptLogin()">Login</button>
+	</div>
+</div>

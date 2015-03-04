@@ -1,30 +1,57 @@
 ﻿<div ng-controller="HeaderController">
 	<header>
-		<div class="container">
-			<div class="grid-75">
-				<img src="/img/logo.png" alt="" />
+		<div class="ui grid">
+			<div class="left floated five wide column">
+				<h2 class="ui header">
+					<i class="settings icon"></i>
+					<div class="content">
+						Sympletech App Roller
+						<div class="sub header">This is how I like to roll!</div>
+					</div>
+				</h2>
 			</div>
-			<div class="grid-25">
-				
-				<button ng-hide="userLoggedIn" ng-click="showLoginModal()">Login</button>
-				<div ng-show="userLoggedIn">
-					{{currentUser.username}}
-					<button ng-click="logOut()">Log Out</button>
+
+			<div class="right floated three wide column">
+				<div class="right aligned">
+					<div ng-hide="userLoggedIn" ng-click="showLoginModal()" class="ui mini basic button">
+						<i class="icon user"></i>
+						Login
+					</div>
+
+					<div ng-show="userLoggedIn">
+						{{currentUser.username}}
+
+						<div ng-click="logOut()" class="ui mini basic button">
+							Log Out
+						</div>
+					</div>					
 				</div>
 			</div>
 		</div>
 	</header>
 
 
-	<div ng-modal show="loginModalVisible" title="Please Login">
-		<div>
-			<label>Username</label>
-			<input ng-model="username" type="text" />
+	<modal ng-model="loginModalVisible">
+		<i class="close icon" ng-click="hideLoginModal()"></i>
+		<div class="header">Please Login</div>
+		<div class="content">
+			<div class="ui form">
+				<div class="field">
+					<label>Username</label>
+					<input ng-model="username" placeholder="Username" type="text">
+				</div>
+				<div class="field">
+					<label>Password</label>
+					<input ng-model="password" type="password">
+				</div>
+			</div>
 		</div>
-		<div>
-			<label>Password</label>
-			<input ng-model="password" type="password" />
+		<div class="actions">
+			<div class="ui buttons">
+				<div ng-click="attemptLogin()" class="ui positive button">
+					Submit
+				</div>
+			</div>
 		</div>
-		<button ng-click="attemptLogin()">Login</button>
-	</div>
+	</modal>
 </div>

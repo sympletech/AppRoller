@@ -15,6 +15,10 @@
 			$scope.loginModalVisible = true;
 		};
 
+		$scope.hideLoginModal = function () {
+			$scope.loginModalVisible = false;
+		};
+
 		$scope.username = 'dlewis';
 		$scope.password = 'password';
 		$scope.errorMessage = null;
@@ -29,7 +33,6 @@
 					$scope.errorMessage = result.message;
 				}
 			});
-			
 		};
 
 		$scope.logOut = function() {

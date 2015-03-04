@@ -1,4 +1,4 @@
-<div class='ng-modal' ng-class="(show ? 'visible' : '')">
+<div class='ui modal ng-modal' ng-class="(show ? 'visible' : '')">
 	<div class='ng-modal-overlay' ng-click='hideModal()'></div>
 	<div class='ng-modal-dialog' ng-style='dialogStyle'>
 		<div class='ng-modal-close' ng-click='hideModal()'>X</div>
@@ -7,3 +7,15 @@
 		<div class='ng-modal-dialog-content' ng-transclude></div>
 	</div>
 </div>
+
+
+
+<!--
+<div class="ui modal">
+	<i class="close icon"></i>
+	<div class="header">{{title}}</div>
+	
+	
+	<div class="content" ng-transclude></div>
+</div>
+-->

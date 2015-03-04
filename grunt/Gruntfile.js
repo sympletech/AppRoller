@@ -10,6 +10,7 @@ module.exports = function (grunt) {
 		'factories/xssAjax-service.js',
 		'factories/authorization-service.js',
 		'controllers/header-controller.js',
+		'controllers/navigation-controller.js',
 		'controllers/home-controller.js'
 	];
 

@@ -1,0 +1,5 @@
+﻿<nav ng-controller="NavigationController" class="ui secondary  menu">
+	<a ng-repeat="navItem in navItems" ng-class="{'active' : navItem.active}" ng-click="loadPage(navItem)" class="item">
+		<i class="{{navItem.icon}}  icon"></i> {{navItem.name}}
+	</a>
+</nav>

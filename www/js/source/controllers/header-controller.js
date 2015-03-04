@@ -2,10 +2,6 @@
 	'$rootScope', '$scope', 'authorizationService',
 	function ($rootScope, $scope, authorizationService) {
 
-		$scope.goHome = function () {
-			$location.path('/home');
-		};
-
 		$scope.userLoggedIn = authorizationService.userLoggedIn;
 		$scope.currentUser = authorizationService.currentUser;
 

@@ -43,11 +43,11 @@ module.exports = function (grunt) {
 			refresh: {
 				options: { livereload: true },
 				files: ['../www/**/*'],
-				tasks: ['clean', 'uglify:include', 'copy']
+				tasks: ['uglify:include', 'copy']
 			},
 			grunt: {
 				files: ['Gruntfile.js'],
-				tasks: ['clean', 'compass', 'uglify:include', 'uglify:app', 'uglify:min', 'copy', 'watch']
+				tasks: ['compass', 'uglify:include', 'uglify:app', 'uglify:min', 'copy', 'watch']
 			}
 		},
 		compass: {

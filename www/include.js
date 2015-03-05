@@ -1,12 +1,10 @@
 ﻿var _global = {
 	env: '',
-	webDir: '',
 	apiUrl: '',
 };
 
 (function () {
-	var cdnPath = 'apps/myapp/',
-		apiPath = 'myapp/';
+	var apiPath = 'myapp/';
 
 	//********************************************************
 	//	Environment
@@ -14,23 +12,19 @@
 	switch (location.hostname) {
 		case 'localhost':
 			_global.env = 'dev';
-			_global.webDir = "//" + location.hostname + ":" + location.port + "/";
 			_global.apiPath = "//localhost:50207/" + apiPath;
 			break;
-		case 'cmsdev.esri.com': case 'webapps-cdn-dev.esri.com':
+		case 'dev.myserver.com':
 			_global.env = 'dev';
-			_global.webDir = "//webapps-cdn-dev.esri.com/" + cdnPath;
-			_global.apiPath = "//webopsapi_dev.esri.com/" + apiPath;
+			_global.apiPath = "//api_dev.myserver.com/" + apiPath;
 			break;
-		case 'cmsqa.esri.com': case 'webapps-cdn-stg.esri.com':
+		case 'qa.myserver.com':
 			_global.env = 'dev';
-			_global.webDir = "//webapps-cdn-stg.esri.com/" + cdnPath;
-			_global.apiPath = "//webopsapi_stg.esri.com/" + apiPath;
+			_global.apiPath = "//api_qa.myserver.com/" + apiPath;
 			break;
 		default:
 			_global.env = 'prd';
-			_global.webDir = "//webapps-cdn.esri.com/" + cdnPath;
-			_global.apiPath = "//webopsapi.esri.com/" + apiPath;
+			_global.apiPath = "//api.myserver.com/" + apiPath;
 			break;
 	}
 

@@ -1,7 +1,7 @@
 ﻿app.routes = [
 	{ name: 'Home', icon:'home', path: '/home', template: 'partials/home.html', controller: 'HomeController', secure: false },
-	{ name: 'Dashboard', icon: 'dashboard', path: '/dashboard', template: 'partials/content-page.html', controller: '', secure: false },
-	{ name: 'Laboratory', icon: 'lab', path: '/laboratory', template: 'partials/content-page.html', controller: '', secure: false }
+	{ name: 'Dashboard', icon: 'dashboard', path: '/dashboard', template: 'partials/content-page.html', controller: 'ContentPageController', secure: false },
+	{ name: 'Laboratory', icon: 'lab', path: '/laboratory', template: 'partials/content-page.html', controller: 'ContentPageController', secure: false }
 ];
 
 app.config(['$routeProvider', function ($routeProvider) {

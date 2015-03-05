@@ -1,6 +1,6 @@
 ﻿var _global = {
 	env: '',
-	apiUrl: '',
+	apiPath: '',
 };
 
 (function () {

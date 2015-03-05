@@ -24,22 +24,35 @@ app.factory('xssAjax', ['$q',
 		};
 
 		$scope.post = function(path, params) {
+			return MakeAjaxCall('POST', path, params);
+		};
+
+		$scope.put = function (path, params) {
+			return MakeAjaxCall('PUT', path, params);
+		};
+
+		$scope.delete = function (path, params) {
+			return MakeAjaxCall('DELETE', path, params);
+		};
+
+
+		function MakeAjaxCall(verb, path, params) {
 			var deferred = $q.defer();
 
 			if (Browser.LTEIE9) {
 				var url = proxyUrl + path + '?' + $.param(params);
 
 				$scope.get(url, null).then(
-					function(data) {
+					function (data) {
 						deferred.resolve(data);
 					},
-					function(errorThrown) {
+					function (errorThrown) {
 						deferred.reject(errorThrown);
 					});
 			} else {
 				$.ajax({
 					url: path,
-					type : 'POST',
+					type: verb,
 					data: params,
 					success: function (data) {
 						try {
@@ -56,7 +69,7 @@ app.factory('xssAjax', ['$q',
 			}
 
 			return deferred.promise;
-		};
+		}
 
 		return $scope;
 	}

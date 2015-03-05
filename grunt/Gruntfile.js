@@ -11,7 +11,8 @@ module.exports = function (grunt) {
 		'factories/authorization-service.js',
 		'controllers/header-controller.js',
 		'controllers/navigation-controller.js',
-		'controllers/home-controller.js'
+		'controllers/home-controller.js',
+		'controllers/content-page-controller.js'
 	];
 
 	jsFiles = jsFiles.map(function (jsFile) {

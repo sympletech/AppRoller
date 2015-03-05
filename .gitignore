@@ -212,3 +212,5 @@ FakesAssemblies/
 /grunt/node_modules
 /dist
 /.nuget
+/tests/js
+/tests/include.js

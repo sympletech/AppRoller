@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Test Suite | News Posts</title>
+</head>
+<body>
+	<h1 id="qunit-header">Test Suite | News Posts</h1>
+	<h2 id="qunit-banner"></h2>
+
+	<div id="qunit-testrunner-toolbar"></div>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests"></ol>
+
+	<div id="qunit-fixture"></div>
+	<div id="map-containers"></div>
+
+	<!--Testing Libs-->
+	<link href="lib/qunit/qunit-1.17.1.css" rel="stylesheet" />
+	<script src="lib/qunit/qunit-1.17.1.js"></script>
+	<script src="lib/sinon/sinon-1.7.3.js"></script>
+	<script src="lib/sinon/sinon-qunit-1.0.0.js"></script>
+	<script src="lib/blanket.min.js"></script>
+
+	<script type="text/javascript">
+		function verify(expected, actual) {
+			actual = JSON.stringify(actual);
+			expected = JSON.stringify(expected);
+
+			ok(expected == actual, "Expected : " + expected + " - Recieved : " + actual);
+			if (expected != actual) {
+				console.log(actual);
+			}
+		}
+		sinon.config.useFakeTimers = false;
+	</script>
+
+
+	<script src="include.js"></script>
+
+
+	<!-- ************************************************
+							Tests
+		************************************************ -->
+
+	<script src="spec/test.js"></script>
+
+
+</body>
+</html>

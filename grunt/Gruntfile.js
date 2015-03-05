@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
 	var serverPort = 8080;
+	var testServerPort = 8081;
 	//js files to combine into app.js && app.min.js (in order)
 	var jsFiles = [
 		//--	Core
@@ -45,6 +46,11 @@ module.exports = function (grunt) {
 				options: { livereload: true },
 				files: ['../www/**/*'],
 				tasks: ['uglify:include', 'copy']
+			},
+			testRefresh: {
+				options: { livereload: true },
+				files: ['../tests/**/*'],
+				tasks: []
 			},
 			grunt: {
 				files: ['Gruntfile.js'],
@@ -113,9 +119,16 @@ module.exports = function (grunt) {
 					{ cwd: '../www/css/lib/', expand: true, src: '**', dest: '../dist/css/lib/' },
 					{ cwd: '../www/img/', expand: true, src: '**', dest: '../dist/img/' },
 					{ cwd: '../www/partials/', expand: true, src: '**', dest: '../dist/partials/' },
-					{ cwd: '../www/', expand: true, src: 'index.html', dest: '../dist/' },
+					{ cwd: '../www/', expand: true, src: 'index.html', dest: '../dist/' }
 				],
 			},
+			tests: {
+				files: [
+					{ cwd: '../www/js/', expand: true, src: '*', dest: '../tests/js/', filter: 'isFile' },
+					{ cwd: '../www/js/lib/', expand: true, src: '**', dest: '../tests/js/lib/' },
+					{ cwd: '../www/', expand: true, src: 'include.js', dest: '../tests/' }
+				],
+			}
 		},
 		connect: {
 			server: {
@@ -123,6 +136,14 @@ module.exports = function (grunt) {
 					port: serverPort,
 					base: '../dist',
 					open: 'http://localhost:' + serverPort,
+					livereload: true
+				}
+			},
+			testServer: {
+				options: {
+					port: testServerPort,
+					base: '../tests',
+					open: 'http://localhost:' + testServerPort,
 					livereload: true
 				}
 			}

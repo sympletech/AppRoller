@@ -210,3 +210,5 @@ FakesAssemblies/
 /api/WebOpsApi.Shared/bin
 /grunt/.sass-cache
 /grunt/node_modules
+/dist
+/.nuget

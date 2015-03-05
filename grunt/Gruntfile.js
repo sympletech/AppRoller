@@ -43,11 +43,11 @@ module.exports = function (grunt) {
 			refresh: {
 				options: { livereload: true },
 				files: ['../www/**/*'],
-				tasks: []
+				tasks: ['uglify:include', 'copy']
 			},
 			grunt: {
 				files: ['Gruntfile.js'],
-				tasks: ['compass', 'uglify:app', 'uglify:min', 'watch']
+				tasks: ['compass', 'uglify:include', 'uglify:app', 'uglify:min', 'watch']
 			}
 		},
 		compass: {
@@ -61,6 +61,18 @@ module.exports = function (grunt) {
 			}
 		},
 		uglify: {
+			include: {
+				options: {
+					mangle: false,
+					compress: false,
+					beautify: true,
+					preserveComments: 'all',
+					banner: banner
+				},
+				files: {
+					'../dist/include.js': ['../www/include.js']
+				}
+			},
 			app: {
 				options: {
 					mangle: false,
@@ -84,11 +96,24 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		copy: {
+			main: {
+				files: [
+					{ cwd: '../www/js/', expand: true, src: '*', dest: '../dist/js/', filter: 'isFile' },
+					{ cwd: '../www/css/', expand: true, src: '*', dest: '../dist/css/', filter: 'isFile' },
+					{ cwd: '../www/js/lib/', expand: true, src: '**', dest: '../dist/js/lib/' },
+					{ cwd: '../www/css/lib/', expand: true, src: '**', dest: '../dist/css/lib/' },
+					{ cwd: '../www/img/', expand: true, src: '**', dest: '../dist/img/' },
+					{ cwd: '../www/partials/', expand: true, src: '**', dest: '../dist/partials/' },
+					{ cwd: '../www/', expand: true, src: 'index.html', dest: '../dist/' },
+				],
+			},
+		},
 		connect: {
 			server: {
 				options: {
 					port: serverPort,
-					base: '../www',
+					base: '../dist',
 					open: 'http://localhost:' + serverPort,
 					livereload: true
 				}
@@ -100,10 +125,11 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 
 	// Default task(s).
-	grunt.registerTask('default', ['compass', 'uglify:app', 'uglify:min', 'connect', 'watch']);
+	grunt.registerTask('default', ['compass', 'uglify:include', 'uglify:app', 'uglify:min', 'copy', 'connect', 'watch']);
 };
 
 

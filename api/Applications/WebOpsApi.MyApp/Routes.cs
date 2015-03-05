@@ -55,8 +55,21 @@ namespace WebOpsApi.MyApp
 				var thing = ctx.ReadParam("thing").ToString();
 
 				var thingToUpdate = things.FirstOrDefault(x => x == pk);
+				if (thingToUpdate != null) {
+					thingToUpdate = thing;
 
-				return null;
+					return new ApiResponse
+					{
+						Success = true,
+						Data = "Updated collection"
+					};
+				}
+
+				return new ApiResponse
+				{
+					Success = false,
+					ErrorMessage = "Thing not found to update"
+				};
 
 			};
 

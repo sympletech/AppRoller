@@ -1,7 +1,9 @@
 module.exports = function (grunt) {
 	var serverPort = 8080;
 	var testServerPort = 8081;
-	//js files to combine into app.js && app.min.js (in order)
+	//**************************************************************
+	//	js files to combine into app.js && app.min.js (in order)
+	//**************************************************************
 	var jsFiles = [
 		//--	Core
 		'app.js',
@@ -20,6 +22,9 @@ module.exports = function (grunt) {
 		return '../www/js/source/' + jsFile;
 	});
 
+	//**************************************************************
+	//	Banner to place on top of all js files
+	//**************************************************************
 	var banner =
 			'//************************************************************************************\n' +
 			'// \tApp Roller 1.0 \n' +
@@ -28,7 +33,7 @@ module.exports = function (grunt) {
 			'// \tCompiled On : ' + (new Date()).toUTCString() + '\n'+
 			'//************************************************************************************\n\n\n';
 
-	// Project configuration.
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		watch: {
@@ -57,6 +62,9 @@ module.exports = function (grunt) {
 				tasks: ['compass', 'uglify:include', 'uglify:app', 'uglify:min', 'copy', 'watch']
 			}
 		},
+		//**************************************************************
+		//	Compass (SCSS) Configuration
+		//**************************************************************
 		compass: {
 			sass: {
 				options: {
@@ -68,6 +76,9 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		//**************************************************************
+		//	Javascript build and minify settings (Uglify)
+		//**************************************************************
 		uglify: {
 			include: {
 				options: {
@@ -104,12 +115,18 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		//**************************************************************
+		//	Cleans the dist and test dirs on first run
+		//**************************************************************
 		clean: {
 			options: {
 				force: true
 			},
-			build: ["../dist", ],
+			build: ["../dist", "../tests/js/"],
 		},
+		//**************************************************************
+		//	Deployment section - Copies files to the dist and test dirs
+		//**************************************************************
 		copy: {
 			main: {
 				files: [
@@ -130,6 +147,9 @@ module.exports = function (grunt) {
 				],
 			}
 		},
+		//**************************************************************
+		//	Development and Test Server Settings
+		//**************************************************************
 		connect: {
 			server: {
 				options: {

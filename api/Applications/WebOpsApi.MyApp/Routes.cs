@@ -56,7 +56,9 @@ namespace WebOpsApi.MyApp
 
 				var thingToUpdate = things.FirstOrDefault(x => x == pk);
 				if (thingToUpdate != null) {
-					thingToUpdate = thing;
+
+					var i = things.IndexOf(thingToUpdate);
+					things[i] = thing;
 
 					return new ApiResponse
 					{
@@ -71,6 +73,27 @@ namespace WebOpsApi.MyApp
 					ErrorMessage = "Thing not found to update"
 				};
 
+			};
+
+			Delete["/Things"] = ctx => {
+				var thing = ctx.ReadParam("thing").ToString();
+				var thingToDelete = things.FirstOrDefault(x => x == thing);
+				if (thingToDelete != null)
+				{
+					things.Remove(thingToDelete);
+
+					return new ApiResponse
+					{
+						Success = true,
+						Data = thing + " Deleted"
+					};
+				}
+
+				return new ApiResponse
+				{
+					Success = false,
+					ErrorMessage = "Thing not found to delete"
+				};
 			};
 
 		}

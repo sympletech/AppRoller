@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebOpsApi.Shared", "api\Web
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{9F47ED1F-A93F-4704-A2DE-FE2005CD44D4}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "www(3)", "http://localhost:61898", "{AEA9D37A-46E9-4B95-A1E0-59AFF5EF7D9A}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "www(14)", "http://localhost:61898", "{AEA9D37A-46E9-4B95-A1E0-59AFF5EF7D9A}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
@@ -67,6 +67,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F2B1AE
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "tests", "http://localhost:55156", "{B47A35FE-2BA5-4A30-88A4-BC280FBEF1BD}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55156"
+		Debug.AspNetCompiler.PhysicalPath = "tests\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55156\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55156"
+		Release.AspNetCompiler.PhysicalPath = "tests\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55156\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "tests\"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8B35BE66-D8C2-4095-9A0F-D32920CCC15D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebOpsApi.Tests", "api\Tests\WebOpsApi.Tests\WebOpsApi.Tests.csproj", "{BAA065B9-BA60-4527-9B26-5B21E1A3A071}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -102,6 +127,18 @@ Global
 		{4DF7C0AF-36E0-4609-A33D-DCD3E13EBDA2}.QA|Any CPU.Build.0 = Release|Any CPU
 		{4DF7C0AF-36E0-4609-A33D-DCD3E13EBDA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DF7C0AF-36E0-4609-A33D-DCD3E13EBDA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B47A35FE-2BA5-4A30-88A4-BC280FBEF1BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B47A35FE-2BA5-4A30-88A4-BC280FBEF1BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B47A35FE-2BA5-4A30-88A4-BC280FBEF1BD}.QA|Any CPU.ActiveCfg = Debug|Any CPU
+		{B47A35FE-2BA5-4A30-88A4-BC280FBEF1BD}.QA|Any CPU.Build.0 = Debug|Any CPU
+		{B47A35FE-2BA5-4A30-88A4-BC280FBEF1BD}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B47A35FE-2BA5-4A30-88A4-BC280FBEF1BD}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{BAA065B9-BA60-4527-9B26-5B21E1A3A071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAA065B9-BA60-4527-9B26-5B21E1A3A071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAA065B9-BA60-4527-9B26-5B21E1A3A071}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{BAA065B9-BA60-4527-9B26-5B21E1A3A071}.QA|Any CPU.Build.0 = Release|Any CPU
+		{BAA065B9-BA60-4527-9B26-5B21E1A3A071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAA065B9-BA60-4527-9B26-5B21E1A3A071}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,5 +148,7 @@ Global
 		{934CF0B2-72A1-44D2-99A5-A51FA1C58744} = {9F47ED1F-A93F-4704-A2DE-FE2005CD44D4}
 		{4DF7C0AF-36E0-4609-A33D-DCD3E13EBDA2} = {DF0317D8-7A0A-4875-8723-0FE985502060}
 		{DF0317D8-7A0A-4875-8723-0FE985502060} = {9F47ED1F-A93F-4704-A2DE-FE2005CD44D4}
+		{8B35BE66-D8C2-4095-9A0F-D32920CCC15D} = {9F47ED1F-A93F-4704-A2DE-FE2005CD44D4}
+		{BAA065B9-BA60-4527-9B26-5B21E1A3A071} = {8B35BE66-D8C2-4095-9A0F-D32920CCC15D}
 	EndGlobalSection
 EndGlobal

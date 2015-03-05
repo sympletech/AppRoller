@@ -63,6 +63,12 @@ This project is a starter application to be used for building Web based applicat
 - Nancy.1.1 [http://nancyfx.org/](http://nancyfx.org/)
 - Json.NET [http://www.newtonsoft.com/json](http://www.newtonsoft.com/json)
 
+**ASP.NET Test Project**
+
+
+- NUnit [http://www.nunit.org/](http://www.nunit.org/)
+- Approval Tests [http://approvaltests.sourceforge.net/](http://approvaltests.sourceforge.net/)
+
 **Grunt Build**
 
 - grunt 0.4.2 [http://gruntjs.com/](http://gruntjs.com/)

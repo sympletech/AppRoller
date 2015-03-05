@@ -43,11 +43,11 @@ module.exports = function (grunt) {
 			refresh: {
 				options: { livereload: true },
 				files: ['../www/**/*'],
-				tasks: ['uglify:include', 'copy']
+				tasks: ['clean', 'uglify:include', 'copy']
 			},
 			grunt: {
 				files: ['Gruntfile.js'],
-				tasks: ['compass', 'uglify:include', 'uglify:app', 'uglify:min', 'watch']
+				tasks: ['clean', 'compass', 'uglify:include', 'uglify:app', 'uglify:min', 'copy', 'watch']
 			}
 		},
 		compass: {
@@ -57,6 +57,7 @@ module.exports = function (grunt) {
 					cssDir: '../www/css/'
 					//environment: 'production',
 					//outputStyle: 'compressed'
+
 				}
 			}
 		},
@@ -96,6 +97,12 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		clean: {
+			options: {
+				force: true
+			},
+			build: ["../dist", ],
+		},
 		copy: {
 			main: {
 				files: [
@@ -125,11 +132,12 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 
 	// Default task(s).
-	grunt.registerTask('default', ['compass', 'uglify:include', 'uglify:app', 'uglify:min', 'copy', 'connect', 'watch']);
+	grunt.registerTask('default', ['clean', 'compass', 'uglify:include', 'uglify:app', 'uglify:min', 'copy', 'connect', 'watch']);
 };
 
 

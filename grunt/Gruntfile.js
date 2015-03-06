@@ -8,7 +8,6 @@ module.exports = function (grunt) {
 		//--	Core
 		'app.js',
 		'routes.js',
-		'helpers/browser-detector.js',
 		'directives/modal.js',
 		'factories/xssAjax-service.js',
 		'factories/authorization-service.js',
@@ -26,12 +25,12 @@ module.exports = function (grunt) {
 	//	Banner to place on top of all js files
 	//**************************************************************
 	var banner =
-			'//************************************************************************************\n' +
-			'// \tApp Roller 1.0 \n' +
-			'// \tDaniel Lewis (dlewis@sympletech.com) \n' +
-			'// \n' +
-			'// \tCompiled On : ' + (new Date()).toUTCString() + '\n'+
-			'//************************************************************************************\n\n\n';
+			'/**************************************************************************************\n' +
+			' * \tApp Roller 1.0 \n' +
+			' * \tDaniel Lewis (dlewis@sympletech.com) \n' +
+			' * \n' +
+			' * \tCompiled On : ' + (new Date()).toUTCString() + '\n'+
+			' **************************************************************************************/\n\n\n';
 
 
 	grunt.initConfig({
@@ -100,7 +99,7 @@ module.exports = function (grunt) {
 		usebanner: {
 			options: {
 				position: 'top',
-				banner: '/*\n' + banner + '*/'
+				banner: banner
 			},
 			files: {
 				src: ['../www/css/app.css', '../www/css/app-min.css']
@@ -182,19 +181,19 @@ module.exports = function (grunt) {
 		//	Development and Test Server Settings
 		//**************************************************************
 		connect: {
-			server: {
-				options: {
-					port: serverPort,
-					base: '../dist',
-					open: 'http://localhost:' + serverPort,
-					livereload: true
-				}
-			},
 			testServer: {
 				options: {
 					port: testServerPort,
 					base: '../tests',
 					open: 'http://localhost:' + testServerPort,
+					livereload: true
+				}
+			},
+			server: {
+				options: {
+					port: serverPort,
+					base: '../dist',
+					open: 'http://localhost:' + serverPort,
 					livereload: true
 				}
 			}

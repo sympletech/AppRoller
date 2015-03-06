@@ -35,11 +35,16 @@ app.factory('xssAjax', ['$q',
 			return MakeAjaxCall('DELETE', path, params);
 		};
 
+		function useJsonp() {
+			return navigator.appVersion.indexOf("MSIE 9.")
+				|| navigator.appVersion.indexOf("MSIE 8.")
+				|| navigator.appVersion.indexOf("MSIE 7.");
+		}
 
 		function MakeAjaxCall(verb, path, params) {
 			var deferred = $q.defer();
 
-			if (Browser.LTEIE9) {
+			if (useJsonp()) {
 				var url = proxyUrl + path + '?' + $.param(params);
 
 				$scope.get(url, null).then(

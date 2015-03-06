@@ -5,34 +5,20 @@ app.factory('xssAjax', ['$q',
 
 		var proxyUrl = 'http://webappsproxy.esri.com/Get2Post?';
 
-		$scope.get = function(path, params) {
-			var deferred = $q.defer();
-
-			$.ajax({
-				url: path,
-				data: params,
-				dataType: 'jsonp',
-				success: function (data) {
-					deferred.resolve(data);
-				},
-				error: function (jqXhr, textStatus, errorThrown) {
-					deferred.reject(errorThrown);
-				}
-			});
-
-			return deferred.promise;
+		$scope.get = function (path, params) {
+			return makeAjaxCall('GET', path, params);
 		};
 
 		$scope.post = function(path, params) {
-			return MakeAjaxCall('POST', path, params);
+			return makeAjaxCall('POST', path, params);
 		};
 
 		$scope.put = function (path, params) {
-			return MakeAjaxCall('PUT', path, params);
+			return makeAjaxCall('PUT', path, params);
 		};
 
 		$scope.delete = function (path, params) {
-			return MakeAjaxCall('DELETE', path, params);
+			return makeAjaxCall('DELETE', path, params);
 		};
 
 		function useJsonp() {
@@ -41,37 +27,32 @@ app.factory('xssAjax', ['$q',
 				|| navigator.appVersion.indexOf("MSIE 7.");
 		}
 
-		function MakeAjaxCall(verb, path, params) {
+		function makeAjaxCall(verb, path, params) {
 			var deferred = $q.defer();
 
-			if (useJsonp()) {
-				var url = proxyUrl + path + '?' + $.param(params);
-
-				$scope.get(url, null).then(
-					function (data) {
-						deferred.resolve(data);
-					},
-					function (errorThrown) {
-						deferred.reject(errorThrown);
-					});
-			} else {
-				$.ajax({
-					url: path,
-					type: verb,
-					data: params,
-					success: function (data) {
-						try {
-							var dataObj = JSON.parse(data);
-							deferred.resolve(dataObj);
-						} catch (e) {
-							deferred.resolve(data);
-						}
-					},
-					error: function (jqXhr, textStatus, errorThrown) {
-						deferred.reject(errorThrown);
-					}
-				});
+			if (useJsonp() && verb != 'GET') {
+				path = proxyUrl + path + '?' + $.param(params);
+				verb = 'GET';
 			}
+
+			$.ajax({
+				url: path,
+				type: verb,
+				data: params,
+				timeout: 15000,
+				dataType: useJsonp() ? 'jsonp' : null,
+				success: function (data) {
+					try {
+						var dataObj = JSON.parse(data);
+						deferred.resolve(dataObj);
+					} catch (e) {
+						deferred.resolve(data);
+					}
+				},
+				error: function (jqXhr, textStatus, errorThrown) {
+					deferred.reject(errorThrown);
+				}
+			});
 
 			return deferred.promise;
 		}

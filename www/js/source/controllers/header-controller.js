@@ -39,5 +39,4 @@
 			$scope.currentUser = authStateInfo.currentUser;
 			$scope.userLoggedIn = authStateInfo.userLoggedIn;
 		});
-
 	}]);

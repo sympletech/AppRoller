@@ -47,6 +47,7 @@
 		'js/lib/angular-ie7-support.min.js',
 		'js/lib/lodash.2.4.1.min.js',
 		'js/lib/jquery.cookie.js',
+		'js/lib/modernizr.js',
 		'css/lib/Semantic-UI-1.10.3/semantic.min.js',
 		'css/lib/Semantic-UI-1.10.3/angular-semantic-ui.min.js',
 		_global.env == 'prd' ? 'js/app-min.js' : 'js/app.js'

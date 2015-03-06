@@ -50,6 +50,7 @@ This project is a starter application to be used for building Web based applicat
 - jquery.cookie [https://github.com/carhartl/jquery-cookie](https://github.com/carhartl/jquery-cookie)
 - lodash.2.4.1 [https://lodash.com/](https://lodash.com/)
 - Semantic-UI-1.10.3 [http://semantic-ui.com/](http://semantic-ui.com/)
+- modernizr [http://modernizr.com/](http://modernizr.com/)
 
 **Front End Testing**
 

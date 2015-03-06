@@ -33,7 +33,7 @@
 	//********************************************************
 	var styles = [
 		'css/lib/Semantic-UI-1.10.3/semantic.min.css',
-		'css/app.css'
+		_global.env == 'prd' ? 'css/app-min.css' : 'css/app.css'
 	];
 
 	//********************************************************

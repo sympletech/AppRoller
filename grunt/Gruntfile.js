@@ -40,7 +40,7 @@ module.exports = function (grunt) {
 			sass: {
 				options: { livereload: true },
 				files: ['../www/css/source/**/*.scss'],
-				tasks: ['compass']
+				tasks: ['sass', 'usebanner']
 			},
 			uglifyJS: {
 				options: { livereload: true },
@@ -59,21 +59,39 @@ module.exports = function (grunt) {
 			},
 			grunt: {
 				files: ['Gruntfile.js'],
-				tasks: ['compass', 'uglify:include', 'uglify:app', 'uglify:min', 'copy', 'watch']
+				tasks: ['sass', 'usebanner', 'uglify:include', 'uglify:app', 'uglify:min', 'copy', 'watch']
 			}
 		},
 		//**************************************************************
-		//	Compass (SCSS) Configuration
+		//	SASS Configuration
 		//**************************************************************
-		compass: {
-			sass: {
+		sass: {
+			uncompressed: {
 				options: {
-					sassDir: '../www/css/source/',
-					cssDir: '../www/css/'
-					//environment: 'production',
-					//outputStyle: 'compressed'
-
-				}
+					lineNumbers: true,
+					sourcemap: 'none',
+				},
+				files: [
+				{
+					expand: true,
+					cwd: '../www/css/source/',
+					src: ['*.scss'],
+					dest: '../www/css/',
+					ext: '.css'
+				}]
+			},
+			dist: {
+				options: {
+					style: 'compressed',
+					sourcemap: 'none',
+				},
+				files: [{
+					expand: true,
+					cwd: '../www/css/source/',
+					src: ['*.scss'],
+					dest: '../www/css/',
+					ext: '-min.css'
+				}]
 			}
 		},
 		//**************************************************************
@@ -82,10 +100,10 @@ module.exports = function (grunt) {
 		usebanner: {
 			options: {
 				position: 'top',
-				banner: banner
+				banner: '/*\n' + banner + '*/'
 			},
 			files: {
-				src: ['../www/css/app.css']
+				src: ['../www/css/app.css', '../www/css/app-min.css']
 			}
 		},
 
@@ -185,7 +203,7 @@ module.exports = function (grunt) {
 
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
@@ -193,7 +211,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 
 	// Default task(s).
-	grunt.registerTask('default', ['clean', 'compass', 'usebanner', 'uglify:include', 'uglify:app', 'uglify:min', 'copy', 'connect', 'watch']);
+	grunt.registerTask('default', ['clean', 'sass', 'usebanner', 'uglify', 'copy', 'connect', 'watch']);
 };
 
 

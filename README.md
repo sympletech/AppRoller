@@ -73,7 +73,7 @@ This project is a starter application to be used for building Web based applicat
 
 - grunt 0.4.2 [http://gruntjs.com/](http://gruntjs.com/)
 - grunt-contrib-connect 0.9.0 [https://github.com/gruntjs/grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect)
-- grunt-contrib-compass 0.7.0 [https://github.com/gruntjs/grunt-contrib-compass](https://github.com/gruntjs/grunt-contrib-compass)
+- grunt-contrib-sass 0.9.2 [https://github.com/gruntjs/grunt-contrib-sass](https://github.com/gruntjs/grunt-contrib-sass)
 - grunt-contrib-uglify 0.6.0 [https://github.com/gruntjs/grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
 - grunt-contrib-watch 0.5.3 [https://github.com/gruntjs/grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
 - load-grunt-tasks 0.2.0 [https://github.com/sindresorhus/load-grunt-tasks](https://github.com/sindresorhus/load-grunt-tasks)

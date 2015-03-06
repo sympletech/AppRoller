@@ -77,6 +77,19 @@ module.exports = function (grunt) {
 			}
 		},
 		//**************************************************************
+		//	Banner - Needed to add banner to CSS files
+		//**************************************************************
+		usebanner: {
+			options: {
+				position: 'top',
+				banner: banner
+			},
+			files: {
+				src: ['../www/css/app.css']
+			}
+		},
+
+		//**************************************************************
 		//	Javascript build and minify settings (Uglify)
 		//**************************************************************
 		uglify: {
@@ -176,10 +189,11 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-banner');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 
 	// Default task(s).
-	grunt.registerTask('default', ['clean', 'compass', 'uglify:include', 'uglify:app', 'uglify:min', 'copy', 'connect', 'watch']);
+	grunt.registerTask('default', ['clean', 'compass', 'usebanner', 'uglify:include', 'uglify:app', 'uglify:min', 'copy', 'connect', 'watch']);
 };
 
 

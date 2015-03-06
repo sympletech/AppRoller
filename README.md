@@ -79,6 +79,7 @@ This project is a starter application to be used for building Web based applicat
 - load-grunt-tasks 0.2.0 [https://github.com/sindresorhus/load-grunt-tasks](https://github.com/sindresorhus/load-grunt-tasks)
 - grunt-contrib-clean 0.6.0 [https://github.com/gruntjs/grunt-contrib-clean](https://github.com/gruntjs/grunt-contrib-clean)
 - grunt-contrib-copy 0.8.0 [https://github.com/gruntjs/grunt-contrib-copy](https://github.com/gruntjs/grunt-contrib-copy)
+- grunt-banner 0.3.1 [https://github.com/mattstyles/grunt-banner](https://github.com/mattstyles/grunt-banner)
 
 **SCSS Compiler**
 

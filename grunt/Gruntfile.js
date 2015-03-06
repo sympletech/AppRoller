@@ -187,7 +187,7 @@ module.exports = function (grunt) {
 				options: {
 					port: testServerPort,
 					base: '../tests',
-					open: 'http://localhost:' + testServerPort,
+					open: 'http://localhost:' + testServerPort + '#tests',
 					livereload: true
 				}
 			},

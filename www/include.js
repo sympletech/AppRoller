@@ -65,7 +65,13 @@
 	//Construct the script tags
 	for (var sc = 0; sc < scripts.length; sc++) {
 		var script = scripts[sc];
-		includes += '<script type="text/javascript" src="' + script + '"></script>';
+		if (location.href.indexOf('tests' > -1) && script == 'js/app.js') {
+			includes += '<script type="text/javascript" src="' + script + '" data-cover></script>';
+		} else {
+			includes += '<script type="text/javascript" src="' + script + '"></script>';
+		}
+
+		
 	}
 
 	document.write(includes);

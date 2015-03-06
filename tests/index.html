@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 	<title>Test Suite | News Posts</title>
 </head>
@@ -21,17 +21,8 @@
 	<script src="lib/sinon/sinon-1.7.3.js"></script>
 	<script src="lib/sinon/sinon-qunit-1.0.0.js"></script>
 	<script src="lib/blanket.min.js"></script>
-
+	<script src="lib/test-helpers.js"></script>
 	<script type="text/javascript">
-		function verify(expected, actual) {
-			actual = JSON.stringify(actual);
-			expected = JSON.stringify(expected);
-
-			ok(expected == actual, "Expected : " + expected + " - Recieved : " + actual);
-			if (expected != actual) {
-				console.log(actual);
-			}
-		}
 		sinon.config.useFakeTimers = false;
 	</script>
 

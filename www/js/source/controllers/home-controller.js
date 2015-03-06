@@ -1,6 +1,8 @@
 ﻿app.controller('HomeController', [
-	'$rootScope', '$scope', '$location',
-	function ($rootScope, $scope, $location) {
+	'$scope','$location',
+	function ($scope, $location) {
 
+		//Used in unit test
+		$scope.message = "Welcome";
 
 	}]);

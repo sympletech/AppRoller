@@ -161,8 +161,8 @@ module.exports = function (grunt) {
 			main: {
 				files: [
 					{ cwd: '../www/js/', expand: true, src: '*', dest: '../dist/js/', filter: 'isFile' },
-					{ cwd: '../www/css/', expand: true, src: '*', dest: '../dist/css/', filter: 'isFile' },
 					{ cwd: '../www/js/lib/', expand: true, src: '**', dest: '../dist/js/lib/' },
+					{ cwd: '../www/css/', expand: true, src: '*', dest: '../dist/css/', filter: 'isFile' },
 					{ cwd: '../www/css/lib/', expand: true, src: '**', dest: '../dist/css/lib/' },
 					{ cwd: '../www/img/', expand: true, src: '**', dest: '../dist/img/' },
 					{ cwd: '../www/partials/', expand: true, src: '**', dest: '../dist/partials/' },
@@ -173,6 +173,8 @@ module.exports = function (grunt) {
 				files: [
 					{ cwd: '../www/js/', expand: true, src: '*', dest: '../tests/js/', filter: 'isFile' },
 					{ cwd: '../www/js/lib/', expand: true, src: '**', dest: '../tests/js/lib/' },
+					{ cwd: '../www/css/', expand: true, src: '*', dest: '../tests/css/', filter: 'isFile' },
+					{ cwd: '../www/css/lib/', expand: true, src: '**', dest: '../tests/css/lib/' },
 					{ cwd: '../www/', expand: true, src: 'include.js', dest: '../tests/' }
 				],
 			}

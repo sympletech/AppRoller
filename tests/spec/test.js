@@ -1,9 +1,21 @@
 ﻿QUnit.module("example-tests");
 
-QUnit.test('getCatalogItems', function () {
-	var expected = "World";
+QUnit.test('Home Controller Test', function () {
+	var expected = "Welcome";
 
-	var results = "Hello";
+	var $scope = GetController('HomeController');
+
+	var results = $scope.message;
+
+	verify(expected, results);
+});
+
+QUnit.test('Authorization Service Factory Test', function () {
+	var expected = 'object';
+
+	var $factory = GetFactory('authorizationService');
+
+	var results = typeof $factory.currentUser;
 
 	verify(expected, results);
 });

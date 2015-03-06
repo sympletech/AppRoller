@@ -49,7 +49,7 @@ module.exports = function (grunt) {
 			refresh: {
 				options: { livereload: true },
 				files: ['../www/**/*'],
-				tasks: ['uglify:include', 'copy']
+				tasks: ['uglify:include', 'copy:main', 'copy:tests']
 			},
 			testRefresh: {
 				options: { livereload: true },
@@ -58,7 +58,7 @@ module.exports = function (grunt) {
 			},
 			grunt: {
 				files: ['Gruntfile.js'],
-				tasks: ['sass', 'usebanner', 'uglify:include', 'uglify:app', 'uglify:min', 'copy', 'watch']
+				tasks: ['sass', 'usebanner', 'uglify', 'copy', 'watch']
 			}
 		},
 		//**************************************************************
@@ -161,10 +161,7 @@ module.exports = function (grunt) {
 			main: {
 				files: [
 					{ cwd: '../www/js/', expand: true, src: '*', dest: '../dist/js/', filter: 'isFile' },
-					{ cwd: '../www/js/lib/', expand: true, src: '**', dest: '../dist/js/lib/' },
 					{ cwd: '../www/css/', expand: true, src: '*', dest: '../dist/css/', filter: 'isFile' },
-					{ cwd: '../www/css/lib/', expand: true, src: '**', dest: '../dist/css/lib/' },
-					{ cwd: '../www/img/', expand: true, src: '**', dest: '../dist/img/' },
 					{ cwd: '../www/partials/', expand: true, src: '**', dest: '../dist/partials/' },
 					{ cwd: '../www/', expand: true, src: 'index.html', dest: '../dist/' }
 				],
@@ -172,10 +169,17 @@ module.exports = function (grunt) {
 			tests: {
 				files: [
 					{ cwd: '../www/js/', expand: true, src: '*', dest: '../tests/js/', filter: 'isFile' },
-					{ cwd: '../www/js/lib/', expand: true, src: '**', dest: '../tests/js/lib/' },
 					{ cwd: '../www/css/', expand: true, src: '*', dest: '../tests/css/', filter: 'isFile' },
-					{ cwd: '../www/css/lib/', expand: true, src: '**', dest: '../tests/css/lib/' },
 					{ cwd: '../www/', expand: true, src: 'include.js', dest: '../tests/' }
+				],
+			},
+			libsAndImages: {
+				files: [
+					{ cwd: '../www/js/lib/', expand: true, src: '**', dest: '../dist/js/lib/' },
+					{ cwd: '../www/css/lib/', expand: true, src: '**', dest: '../dist/css/lib/' },
+					{ cwd: '../www/img/', expand: true, src: '**', dest: '../dist/img/' },
+					{ cwd: '../www/js/lib/', expand: true, src: '**', dest: '../tests/js/lib/' },
+					{ cwd: '../www/css/lib/', expand: true, src: '**', dest: '../tests/css/lib/' }
 				],
 			}
 		},

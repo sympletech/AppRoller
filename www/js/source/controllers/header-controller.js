@@ -29,7 +29,7 @@
 					$scope.errorMessage = result.message;
 				}
 			});
-		};
+		}; 
 
 		$scope.logOut = function() {
 			authorizationService.logOut();

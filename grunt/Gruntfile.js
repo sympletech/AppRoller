@@ -5,7 +5,6 @@ module.exports = function (grunt) {
 	//	js files to combine into app.js && app.min.js (in order)
 	//**************************************************************
 	var jsFiles = [
-		//--	Core
 		'app.js',
 		'routes.js',
 		'directives/modal.js',
@@ -216,7 +215,8 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 
 	// Default task(s).
-	grunt.registerTask('default', ['clean', 'sass', 'usebanner', 'uglify', 'copy', 'connect', 'watch']);
+	grunt.registerTask('default',
+		['clean', 'sass', 'usebanner', 'uglify', 'copy', 'connect', 'watch']);
 };
 
 

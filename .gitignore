@@ -218,3 +218,5 @@ FakesAssemblies/
 /tests/css
 /www/css/app.css
 /www/css/app-min.css
+/www/js/app.js.map
+/www/css/app.css.map

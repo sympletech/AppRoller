@@ -33,7 +33,7 @@
 	//********************************************************
 	var styles = [
 		'css/lib/Semantic-UI-1.10.3/semantic.min.css',
-		_global.env == 'prd' ? 'css/app-min.css' : 'css/app.css'
+		'css/app.css'
 	];
 
 	//********************************************************
@@ -50,7 +50,7 @@
 		'js/lib/modernizr.js',
 		'css/lib/Semantic-UI-1.10.3/semantic.min.js',
 		'css/lib/Semantic-UI-1.10.3/angular-semantic-ui.min.js',
-		_global.env == 'prd' ? 'js/app-min.js' : 'js/app.js'
+		'js/app.js'
 	];
 
 	var includes = '';
